@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js"
+        integrity="sha512-LBqpfYKfymp3VEoHOQharES5j6UyXzUP0Td5jk5j1Ekm9tsbAoGUi5VaGA+0gdAlqKvAUb+7iFBe6qQQ7Jwk0Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+        }
+
+        .trending-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .resto {
+            width: -webkit-fill-available;
+        }
+    </style>
+</head>
+
+<body class="bg-white p-0 m-0">
+
+    <main class="bg-orange-600 min-h-[60vh] md:min-h-[500px] mb-6 text-white relative overflow-hidden">
+
+        <nav
+            class="flex flex-col md:flex-row text-white font-semibold items-center justify-around px-4 py-6 max-w-7xl mx-auto">
+            <div class="mb-4 md:mb-0">
+                <img class="h-10 md:h-[54px] w-auto" src="IMG/LOGO/swiggy_logo_white.avif" alt="Swiggy Logo">
+            </div>
+
+            <ul class="flex flex-wrap justify-center gap-6 list-none items-center text-sm md:text-base font-bold">
+                <li><a href="#" class="hover:text-gray-200">Swiggy Corporate</a></li>
+                <li><a href="#" class="hover:text-gray-200">Partner with us</a></li>
+                <li>
+                    <a href="#App" class="border border-white rounded-lg px-3 py-2 hover:bg-orange-700 transition">
+                        Get the App <i class="fa-solid fa-arrow-up ml-1"></i>
+                    </a>
+                </li>
+                <li>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Sign In</button>
+                </li>
+
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        ...
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="mx-auto z-10 flex flex-col items-center relative px-4 mt-8 md:mt-16 max-w-7xl">
+
+            <div class="hidden lg:block absolute left-0 top-[-50px]">
+                <img src="IMG/DIV-SIDE/Veggies_new.png" alt="Veggies" class="h-[477px] w-auto object-contain">
+            </div>
+
+            <div class="z-20 text-center w-full max-w-4xl">
+                <h1 class="text-3xl md:text-5xl font-bold mb-2">Order food & groceries. Discover</h1>
+                <h1 class="text-3xl md:text-5xl font-bold mb-8 md:mb-12">best restaurants. Swiggy it!</h1>
+
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12 w-full">
+
+                    <div class="bg-white rounded-md relative w-full md:w-[300px]">
+                        <i
+                            class="fa-solid fa-location-dot absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-orange-600"></i>
+                        <input type="text" placeholder="Enter your delivery location"
+                            class="p-[1rem] pl-12 text-gray-900 rounded-md ">
+                    </div>
+
+                    <div class="bg-white rounded-md w-full md:w-[500px] relative">
+                        <input type="text" placeholder="Search for restaurant, item or more" class="p-[1rem] text-gray-900 rounded-md w-full">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 w-full">
+                    <div class="cursor-pointer transform hover:scale-105 transition duration-300">
+                        <img src="IMG/DIV/ec86a309-9b06-48e2-9adc-35753f06bc0a_Food3BU.avif" alt="Food Delivery"
+                            class="rounded-xl shadow-lg max-h-[250px] w-full md:w-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer transform hover:scale-105 transition duration-300">
+                        <img src="IMG/DIV/b5c57bbf-df54-4dad-95d1-62e3a7a8424d_IM3BU.avif" alt="Instamart"
+                            class="rounded-xl shadow-lg max-h-[250px] w-full md:w-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer transform hover:scale-105 transition duration-300">
+                        <img src="IMG/DIV/b6d9b7ab-91c7-4f72-9bf2-fcd4ceec3537_DO3BU.avif" alt="Dineout"
+                            class="rounded-xl shadow-lg max-h-[250px] w-full md:w-auto object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:block absolute right-0 top-[-50px]">
+                <img src="IMG/DIV-SIDE/Sushi_replace.png" alt="Sushi" class="h-[477px] w-auto object-contain">
+            </div>
+        </div>
+        <div class="flex justify-center m-[23px] ">
+            <div class="h-[15px] w-[75vw] bg-white text-gray-400 flex items-center justify-between">
+                <i class="fa-solid fa-caret-left"></i>
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- order our best food  -->
+    <div class="flex justify-between ml-[10%] mr-[10%] m-[4%] mt-[10%]">
+        <h1 class="text-3xl text-black font-bold ">Order our best food options</h1>
+        <div class=" text-gray-400 flex gap-4 items-center text-4xl ">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+        </div>
+    </div>
+
+    <!-- order our best main food  -->
+    <div class="m-[23px] items-center grid justify-center">
+        <div class="grid grid-col-2 overflow-x-scroll w-[80vw] items-center trending-list no-scrollbar">
+            <!-- order our best food list-1 -->
+            <div class="trending flex gap-4 flex-row-10 flex-row" id="myFoodContainer">
+            </div>
+            <!-- order our best food list-2 -->
+            <div class="trending flex gap-4 flex-row" id="myFoodContainer2">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- shop our best food-->
+    <div class="flex justify-between ml-[10%] mr-[10%] m-[4%] mt-[10%]">
+        <h1 class="text-3xl text-black font-bold ">Shop groceries on Instamart</h1>
+        <div class=" text-gray-400 flex gap-4 items-center text-4xl ">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+        </div>
+    </div>
+
+    <!-- shop our best food list -->
+    <div class="m-[23px] items-center flex justify-center">
+        <div id="myshopContainer"
+            class="trending-list overflow-x-auto scrollbar-none flex gap-6  w-[80vw]  items-center">
+
+        </div>
+    </div>
+
+    <!-- Discover best restaurants on Dineout -->
+
+    <!-- Heading -->
+    <div class="flex justify-between ml-[10%] mr-[10%] m-[4%] mt-[10%]">
+        <h1 class="text-3xl text-black font-bold ">Discover best restaurants on Dineout</h1>
+        <div class=" text-gray-400 flex gap-4 items-center text-4xl ">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+        </div>
+    </div>
+
+
+    <!-- Cards Container -->
+    <div class="m-[23px] items-center grid justify-center">
+        <div class="overflow-x-scroll w-[80vw] items-center trending-list flex">
+            <div id="Card" class="card flex gap-4 flex-row ">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- App qr code -->
+    <div class="mt-[6rem]" id="App">
+        <img src="IMG/APP BANNER/App_download_banner.avif" alt="">
+    </div>
+
+
+    <!-- shopping 1 -->
+    <div class="m-[23px] mt-[7%] items-center grid justify-center">
+        <div class="bg-white text-gray-900 w-[80vw] ">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-[1rem] ">Cities with food delivery</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-4 cursor-pointer" id="citiesfoodContainer">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Shopping 2 -->
+    <div class="m-[23px] mt-[7%] items-center grid justify-center">
+        <div class="bg-white text-gray-900 w-[80vw] ">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-[1rem]">Cities with grocery delivery</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-4 cursor-pointer" id="citiesgroceryContainer">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer part  -->
+    <footer class="bg-[#f0f0f5] text-gray-600 pt-16 pb-8 px-4 md:px-20 lg:px-40 font-sans">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 mb-16">
+
+            <div class="flex flex-col items-start">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class=" h-12 relative text-orange-600">
+                        <img src="https://media-assets.swiggy.com/portal/testing/seo-home/Group.svg"
+                            class="text-orange-600 h-10 md:h-[54px] w-[10rem]">
+                    </div>
+                </div>
+                <p class="text-gray-500 mt-2">© 2025 Swiggy Limited</p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-800 font-bold text-lg mb-6">Company</h3>
+                <ul class="space-y-4 text-gray-500 text-base font-medium">
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Swiggy Corporate</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Careers</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Team</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Swiggy One</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Swiggy Instamart</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Swiggy Dineout</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Minis</a></li>
+                    <li><a href="#" class="hover:text-gray-800 transition-colors">Pyng</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-12">
+                <div>
+                    <h3 class="text-gray-800 font-bold text-lg mb-6">Contact us</h3>
+                    <ul class="space-y-4 text-gray-500 text-base font-medium">
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Help & Support</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Partner With Us</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Ride With Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-gray-800 font-bold text-lg mb-6">Legal</h3>
+                    <ul class="space-y-4 text-gray-500 text-base font-medium">
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:col-span-2 lg:col-span-1 gap-12">
+                <div>
+                    <h3 class="text-gray-800 font-bold text-lg mb-6">Available in:</h3>
+                    <ul class="space-y-4 text-gray-500 text-base font-medium">
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Bangalore</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Gurgaon</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Hyderabad</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Delhi</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Mumbai</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Pune</a></li>
+                    </ul>
+
+                    <div class="mt-6 relative inline-block text-left w-full">
+                        <button type="button"
+                            class="inline-flex justify-between items-center rounded-xl border border-gray-300 shadow-sm px-4 py-2  text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none">
+                            685 cities
+                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-12">
+                <div>
+                    <h3 class="text-gray-800 font-bold text-lg mb-6">Life at Swiggy</h3>
+                    <ul class="space-y-4 text-gray-500 text-base font-medium">
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Explore With Swiggy</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Swiggy News</a></li>
+                        <li><a href="#" class="hover:text-gray-800 transition-colors">Snackables</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-gray-800 font-bold text-lg mb-6">Social Links</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-gray-900 text-xl"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 text-xl"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 text-xl"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 text-xl"><i
+                                class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 text-xl"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-gray-600 my-8"></div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <h4 class="text-xl md:text-2xl font-bold text-gray-700 text-center md:text-left">
+                For better experience, download the Swiggy app now
+            </h4>
+
+            <div class="flex gap-4 justify-center">
+                <a href="#" class="transform hover:scale-105 transition-transform">
+                    <img src="IMG/App store/icon-GooglePlay_1_zixjxl.png" alt="Get it on Google Play"
+                        class="h-12 md:h-14 object-contain">
+                </a>
+                <a href="#" class="transform hover:scale-105 transition-transform">
+                    <img src="IMG/App store/icon-AppStore_lg30tv.png" alt="Download on the App Store"
+                        class="h-12 md:h-14 object-contain">
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+<script src="script.js"></script>
+</html>

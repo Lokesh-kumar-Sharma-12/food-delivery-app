@@ -110,6 +110,7 @@ bestFoodOptions.forEach((i, index) => {
   // a create
   const fooda = document.createElement('a');
   fooda.className = 'item items-center text-center';
+  fooda.href = 'pizza/cards.html';
 
   // img create
   const foodimg = document.createElement('img');
@@ -492,248 +493,152 @@ restaurants.forEach((i) => {
 
   div6.textContent = i.bankOffer;
 });
+// ==========================================
+// CITIES WITH FOOD DELIVERY (Show More/Less Logic)
+// ==========================================
 
+// 1. Array same rahega
 const Cities_food_delivery = [
-  {
-    id: 1,
-    name: "Order food online in Bangalore",
-  },
-  {
-    id: 2,
-    name: "Order food online in Gurgaon",
-  },
-  {
-    id: 3,
-    name: "Order food online in Hyderabad",
-  },
-  {
-    id: 4,
-    name: "Order food online in Delhi",
-  },
-  {
-    id: 5,
-    name: "Order food online in Mumbai",
-  },
-  {
-    id: 6,
-    name: "Order food online in Pune",
-  },
-  {
-    id: 7,
-    name: "Order food online in Kolkata",
-  },
-  {
-    id: 8,
-    name: "Order food online in Chennai",
-  },
-  {
-    id: 9,
-    name: "Order food online in Ahmedabad",
-  },
-  {
-    id: 10,
-    name: "Order food online in Chandigarh",
-  },
-  {
-    id: 11,
-    name: "Order food online in Jaipur",
-  },
-  {
-    id: 12,
-    name: "Order food online in Kochi",
-  },
-  {
-    id: 13,
-    name: "Order food online in Coimbatore",
-  },
-  {
-    id: 14,
-    name: "Order food online in Lucknow",
-  },
-  {
-    id: 15,
-    name: "Order food online in Vizag",
-  },
-  {
-    id: 16,
-    name: "Order food online in Surat",
-  },
-  {
-    id: 17,
-    name: "Order food online in Nagpur",
-  },
-  {
-    id: 18,
-    name: "Order food online in Nashik",
-  },
-  {
-    id: 19,
-    name: "Order food online in Vijayawada",
-  },
-  {
-    id: 20,
-    name: "Order food online in Trichy",
-  },
-  {
-    id: 21,
-    name: "Order food online in Mysore",
-  },
-  {
-    id: 22,
-    name: "Order food online in Udaipur",
-  },
-  {
-    id: 23,
-    name: "Order food online in Kanpur",
-  },
-  {
-    id: 24,
-    name: "Order food online in Indore",
+  { id: 1, name: "Order food online in Bangalore" },
+  { id: 2, name: "Order food online in Gurgaon" },
+  { id: 3, name: "Order food online in Hyderabad" },
+  { id: 4, name: "Order food online in Delhi" },
+  { id: 5, name: "Order food online in Mumbai" },
+  { id: 6, name: "Order food online in Pune" },
+  { id: 7, name: "Order food online in Kolkata" },
+  { id: 8, name: "Order food online in Chennai" },
+  { id: 9, name: "Order food online in Ahmedabad" },
+  { id: 10, name: "Order food online in Chandigarh" },
+  { id: 11, name: "Order food online in Jaipur" },
+  { id: 12, name: "Order food online in Kochi" },
+  { id: 13, name: "Order food online in Coimbatore" },
+  { id: 14, name: "Order food online in Lucknow" },
+  { id: 15, name: "Order food online in Vizag" },
+  { id: 16, name: "Order food online in Surat" },
+  { id: 17, name: "Order food online in Nagpur" },
+  { id: 18, name: "Order food online in Nashik" },
+  { id: 19, name: "Order food online in Vijayawada" },
+  { id: 20, name: "Order food online in Trichy" },
+  { id: 21, name: "Order food online in Mysore" },
+  { id: 22, name: "Order food online in Udaipur" },
+  { id: 23, name: "Order food online in Kanpur" },
+  { id: 24, name: "Order food online in Indore" }
+];
+
+const citiesfoodContainer = document.getElementById("citiesfoodContainer");
+const showMoreFoodBtn1 = document.getElementById("showMoreBtn1"); // Naya Button ID
+
+let isFoodExpanded = false; // Alag variable taaki grocery wale se mix na ho
+
+function renderFoodCities() {
+  // A. Container saaf karo
+  citiesfoodContainer.innerHTML = "";
+
+  // B. Limit set karo
+  const limit = isFoodExpanded ? Cities_food_delivery.length : 8;
+  
+  // C. Slice logic
+  const foodToShow = Cities_food_delivery.slice(0, limit);
+
+  // D. Create & Append Elements
+  foodToShow.forEach((i) => {
+    const div = document.createElement("div");
+    div.className = "p-4 border rounded-xl text-center hover:shadow-lg transition-all duration-300";
+    div.textContent = i.name;
+    citiesfoodContainer.append(div);
+  });
+
+  // E. Button Text Update
+  if (showMoreFoodBtn1) {
+    if (isFoodExpanded) {
+        showMoreFoodBtn1.innerHTML = 'Show Less <i class="fa-solid fa-chevron-up ml-2"></i>';
+    } else {
+        showMoreFoodBtn1.innerHTML = 'Show More <i class="fa-solid fa-chevron-down ml-2"></i>';
+    }
   }
-]
+}
 
-// const citiesfoodContainer = document.getElementById("citiesfoodContainer");
+// 2. Event Listener lagao
+if (showMoreFoodBtn1) {
+    showMoreFoodBtn1.addEventListener("click", () => {
+        isFoodExpanded = !isFoodExpanded;
+        renderFoodCities();
+    });
+}
 
-// Cities_food_delivery.forEach((i, index) => {
-
-//   const div = document.createElement("div")
-//   div.className = "p-4 border rounded-xl text-center"
-
-// citiesfoodContainer.append(div)
-// if (index < 12) {
-//   div.textContent = i.name
-// }
-
-// })
+// 3. Pehli baar run karo
+renderFoodCities();
 
 const Cities_grocery_delivery = [
-  {
-    id: 1,
-    name: "Order grocery online in Bangalore",
-  },
-  {
-    id: 2,
-    name: "Order grocery online in Gurgaon",
-  },
-  {
-    id: 3,
-    name: "Order grocery online in Hyderabad",
-  },
-  {
-    id: 4,
-    name: "Order grocery online in Delhi",
-  },
-  {
-    id: 5,
-    name: "Order grocery online in Mumbai",
-  },
-  {
-    id: 6,
-    name: "Order grocery online in Pune",
-  },
-  {
-    id: 7,
-    name: "Order grocery online in Kolkata",
-  },
-  {
-    id: 8,
-    name: "Order grocery online in Chennai",
-  },
-  {
-    id: 9,
-    name: "Order grocery online in Ahmedabad",
-  },
-  {
-    id: 10,
-    name: "Order grocery online in Chandigarh",
-  },
-  {
-    id: 11,
-    name: "Order grocery online in Jaipur",
-  },
-  {
-    id: 12,
-    name: "Order grocery online in Kochi",
-  },
-  {
-    id: 13,
-    name: "Order grocery online in Coimbatore",
-  },
-  {
-    id: 14,
-    name: "Order grocery online in Lucknow",
-  },
-  {
-    id: 15,
-    name: "Order grocery online in Vizag",
-  },
-  {
-    id: 16,
-    name: "Order grocery online in Surat",
-  },
-  {
-    id: 17,
-    name: "Order grocery online in Nagpur",
-  },
-  {
-    id: 18,
-    name: "Order food online in Nashik",
-  },
-  {
-    id: 19,
-    name: "Order grocery online in Vijayawada",
-  },
-  {
-    id: 20,
-    name: "Order grocery online in Trichy",
-  },
-  {
-    id: 21,
-    name: "Order grocery online in Mysore",
-  },
-  {
-    id: 22,
-    name: "Order grocery online in Udaipur",
-  },
-  {
-    id: 23,
-    name: "Order grocery online in Kanpur",
-  },
-  {
-    id: 24,
-    name: "Order grocery online in Indore",
-  }
-]
+  { id: 1, name: "Order grocery online in Bangalore" },
+  { id: 2, name: "Order grocery online in Gurgaon" },
+  { id: 3, name: "Order grocery online in Hyderabad" },
+  { id: 4, name: "Order grocery online in Delhi" },
+  { id: 5, name: "Order grocery online in Mumbai" },
+  { id: 6, name: "Order grocery online in Pune" },
+  { id: 7, name: "Order grocery online in Kolkata" },
+  { id: 8, name: "Order grocery online in Chennai" },
+  { id: 9, name: "Order grocery online in Ahmedabad" },
+  { id: 10, name: "Order grocery online in Chandigarh" },
+  { id: 11, name: "Order grocery online in Jaipur" },
+  { id: 12, name: "Order grocery online in Kochi" },
+  { id: 13, name: "Order grocery online in Coimbatore" },
+  { id: 14, name: "Order grocery online in Lucknow" },
+  { id: 15, name: "Order grocery online in Vizag" },
+  { id: 16, name: "Order grocery online in Surat" },
+  { id: 17, name: "Order grocery online in Nagpur" },
+  { id: 18, name: "Order food online in Nashik" },
+  { id: 19, name: "Order grocery online in Vijayawada" },
+  { id: 20, name: "Order grocery online in Trichy" },
+  { id: 21, name: "Order grocery online in Mysore" },
+  { id: 22, name: "Order grocery online in Udaipur" },
+  { id: 23, name: "Order grocery online in Kanpur" },
+  { id: 24, name: "Order grocery online in Indore" }
+];
 
 const citiesgroceryContainer = document.getElementById("citiesgroceryContainer");
-const initialVisibleCount = 11; // 11 cities + 1 Show More button = 12 items (4x3 grid)
+const showMoreBtn = document.getElementById("showMoreBtn");
 
-Cities_grocery_delivery.forEach((i, index) => {
+let isExpanded = false; // Track karega ki list khuli hai ya band
+const initialLimit = 8; // Shuru mein sirf 8 cities dikhayenge
 
-  const div = document.createElement("div")
-  div.className = "p-4 border rounded-xl text-center"
+function renderGroceryCities() {
+  // 1. Container ko pehle saaf karo (Purana data hatao)
+  citiesgroceryContainer.innerHTML = "";
 
-  citiesgroceryContainer.append(div)
-  if (index < 11) {
-    div.textContent = i.name
+  // 2. Decide karo kitne items dikhane hain
+  // Agar isExpanded TRUE hai to PURI list, nahi to sirf 8
+  const limit = isExpanded ? Cities_grocery_delivery.length : initialLimit;
+
+  // 3. Data ko kaat kar (Slice) naya list banao
+  const citiesToShow = Cities_grocery_delivery.slice(0, limit);
+
+  // 4. HTML create karo aur append karo
+  citiesToShow.forEach((city) => {
+    const div = document.createElement("div");
+    div.className = "p-4 border rounded-xl text-center hover:shadow-lg transition-all duration-300";
+    div.textContent = city.name;
+    citiesgroceryContainer.append(div);
+  });
+
+  // 5. Button ka Text aur Icon update karo
+  if (isExpanded) {
+    showMoreBtn.innerHTML = 'Show Less <i class="fa-solid fa-chevron-up ml-2"></i>';
+  } else {
+    showMoreBtn.innerHTML = 'Show More <i class="fa-solid fa-chevron-down ml-2"></i>';
   }
-  else {
-    const showMoreBtn = document.createElement('div');
-    // Isme wahi classes hain jo baaki cards me hain, bas text-orange aur bold alag hai
-    showMoreBtn.className = 'p-4 border rounded-xl text-center font-extrabold text-orange-600 cursor-pointer flex justify-center items-center gap-2 shadow-sm';
-    showMoreBtn.innerHTML = `Show More <i class="fa-solid fa-chevron-down"></i>`;
+}
 
-    // Step D: Click event add karein
-    showMoreBtn.addEventListener('click', function () {
-      // Button ko remove karein
-      showMoreBtn.remove();
+// 6. Button Click hone par Toggle karo (True ko False, False ko True)
+if (showMoreBtn) {
+  showMoreBtn.addEventListener("click", () => {
+    isExpanded = !isExpanded; 
+    renderGroceryCities(); // Dobara render karo naye limit ke sath
+  });
+}
 
-      // Baaki bachi hui cities ko load karein
-      const remainingCities = Cities_grocery_delivery.slice(initialVisibleCount);
-      remainingCities.forEach(city => {
-        citiesgroceryContainer(city);
-        div.textContent = i.name
-      });
-    });
-  }
-})
+// 7. Page load hote hi pehli baar chalao
+renderGroceryCities();
+
+
+

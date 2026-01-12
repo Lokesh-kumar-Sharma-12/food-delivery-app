@@ -63,13 +63,43 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <h1 class="offcanvas-title text-3xl mt-8" id="offcanvasRightLabel">Login</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        ...
+
+
+                    <p class="ml-[12px]">or<button href="" class="text-orange-600 ml-[12px] " id="create">create an
+                            account</button></p>
+
+                    <div class="item-right relative top-[-77px] right-[-260px]">
+                        <img class="item-right w-[100px]" src="pizza/img/spring-roll.png">
+                    </div>
+
+                    <div class="relative top-[-78px] border-b-2 border-black w-12 ml-[17px]"></div>
+
+
+                    <div class="offcanvas-body relative top-[-90px]">
+                        <!--phonenumber-->
+                        <form action="" id="form">
+                            <div class="mb-3 row w-[350px]">
+                                <label class="ml-4 block mt-8 text-gray-600 text-sm">Phone number</label>
+                                <input type="text"
+                                    class=" ml-4 w-full border border-gray-300 rounded-md mt-2 p-3 outline-none"
+                                    id="phone" placeholder="">
+
+                            </div>
+
+                            <button
+                                class="text-white bg-orange-600 hover:bg-orange-400 w-[350px] border rounded-lg h-[50px]"
+                                id="submit">Login Now</button>
+                        </form>
+                        <div class="mt-2">
+                            <p class="text-gray-500 text-sm">By clicking on login,I accept the<a href=""
+                                    class="text-black text-sm"> Terms and Conditions & Privacy policy</a></p>
+                        </div>
                     </div>
                 </div>
+
             </ul>
         </nav>
 
@@ -89,14 +119,15 @@
                         <i
                             class="fa-solid fa-location-dot absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-orange-600"></i>
                         <input type="text" placeholder="Enter your delivery location"
-                            class="p-[1rem] pl-12 text-gray-900 rounded-md ">
+                            class="resto p-[1rem] pl-12 text-gray-900 rounded-md ">
                     </div>
 
-                    <div class="bg-white rounded-md w-full md:w-[500px] relative">
-                        <input type="text" placeholder="Search for restaurant, item or more" class="p-[1rem] text-gray-900 rounded-md w-full">
+                    <a href="search/search.html" class="bg-white rounded-md w-full md:w-[500px] relative">
+                        <div class="p-[1rem] text-gray-400 rounded-md w-full">Search for restaurant, item or more
+                        </div>
                         <i
                             class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 w-full">
@@ -200,28 +231,43 @@
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl font-bold mb-[1rem] ">Cities with food delivery</h2>
             </div>
-            <div class="grid md:grid-cols-4 gap-4 cursor-pointer" id="citiesfoodContainer">
+            <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4 cursor-pointer" id="citiesfoodContainer">
+            </div>
+            <div class="flex justify-center mt-8">
+                <button id="showMoreBtn1"
+                    class="border border-gray-400 font-bold py-3 px-6 rounded-md hover:bg-gray-100">
+                    Show More
+                </button>
             </div>
         </div>
     </div>
 
 
     <!-- Shopping 2 -->
-    <div class="m-[23px] mt-[7%] items-center grid justify-center">
+    <div class="m-[23px] mt-[7%] items-center grid  justify-center">
         <div class="bg-white text-gray-900 w-[80vw] ">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl font-bold mb-[1rem]">Cities with grocery delivery</h2>
             </div>
-            <div class="grid md:grid-cols-4 gap-4 cursor-pointer" id="citiesgroceryContainer">
+            <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4 cursor-pointer" id="citiesgroceryContainer">
+            </div>
+            <div class="flex justify-center mt-8">
+                <button id="showMoreBtn"
+                    class="border border-gray-400 font-bold py-3 px-6 rounded-md hover:bg-gray-100">
+                    Show More
+                </button>
             </div>
         </div>
     </div>
 
 
+
+
+
     <!-- footer part  -->
     <footer class="bg-[#f0f0f5] text-gray-600 pt-16 pb-8 px-4 md:px-20 lg:px-40 font-sans">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 mb-16">
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 mb-16">
 
             <div class="flex flex-col items-start">
                 <div class="flex items-center gap-2 mb-2">
@@ -248,7 +294,7 @@
                 </ul>
             </div>
 
-            <div class="flex flex-col gap-12">
+            <div class="flex flex-col gap-12 ">
                 <div>
                     <h3 class="text-gray-800 font-bold text-lg mb-6">Contact us</h3>
                     <ul class="space-y-4 text-gray-500 text-base font-medium">
@@ -346,4 +392,5 @@
 
 </body>
 <script src="script.js"></script>
+
 </html>
